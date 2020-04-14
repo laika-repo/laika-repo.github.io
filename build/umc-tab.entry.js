@@ -1,4 +1,4 @@
-import { r as registerInstance } from './core-0a59c081.js';
+import { r as registerInstance } from './core-029ba0c7.js';
 
 const tab = class {
     constructor(hostRef) {

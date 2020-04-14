@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host, c as getElement } from './core-0a59c081.js';
+import { r as registerInstance, h, H as Host, c as getElement } from './core-029ba0c7.js';
 
 const Tabs = class {
     constructor(hostRef) {
@@ -17,7 +17,7 @@ const Tabs = class {
         }))));
     }
     get el() { return getElement(this); }
-    static get style() { return "\@font-face {\n  font-family: \"Museo Sans Rounded\";\n  src: url(\"assets/museosansrounded-300.woff\") format(\"woff\");\n  font-weight: 300;\n  font-style: normal;\n  font-display: fallback;\n}\n:host {\n  display: block;\n}\n:host ul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n:host li {\n  display: inline;\n  margin-right: 24px;\n  font-family: \"Museo Sans Rounded\", sans-serif;\n  font-weight: 300;\n  font-size: 0.875rem;\n  color: #005261;\n}"; }
+    static get style() { return ":host {\n  display: block;\n}\n:host ul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n:host li {\n  display: inline;\n  margin-right: 24px;\n  font-weight: 300;\n  font-size: 0.875rem;\n  color: #005261;\n}"; }
 };
 
 export { Tabs as umc_tabs };
