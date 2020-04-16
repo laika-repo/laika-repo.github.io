@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://laika-repo.github.io/sitemap.xml
