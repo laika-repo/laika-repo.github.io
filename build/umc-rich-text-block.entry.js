@@ -7,7 +7,7 @@ const RichTextBlock = class {
     render() {
         return (h(Host, null, h("slot", null, "hello?")));
     }
-    static get style() { return ":host {\n  display: block;\n}"; }
+    static get style() { return ":host {\n  font-family: \'Museo Sans Rounded\', sans-serif;\n  font-weight: 300;\n  font-size: rem-calc(18px);\n  line-height: rem-calc(28px);\n}"; }
 };
 
 export { RichTextBlock as umc_rich_text_block };
