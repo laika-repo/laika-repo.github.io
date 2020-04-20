@@ -1,937 +1,33 @@
-<!doctype html>
-<html dir=ltr lang=en class=hydrated>
-
-<head>
-  <meta charset="utf-8">
-  <meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Amsterdam UMC</title>
-  <style sty-id="sc-umc-section">
-    umc-section {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      --background-color--default: #fff;
-      background-color: var(--background-color, var(--background-color--default));
-      width: 100%
-    }
-
-    umc-section.content-section {
-      margin-top: 56px
-    }
-
-    .closed umc-section {
-      display: none;
-      overflow: hidden
-    }
-  </style>
-  <style sty-id="sc-umc-menu-section">
-    umc-menu-section {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      background-color: #fff;
-      width: 100%
-    }
-
-    umc-menu-section.umc-section--sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0
-    }
-  </style>
-  <style sty-id="sc-umc-column-section">
-    umc-column-section {
-      --background-color--default: $white;
-      --padding-vertical--default: 20px;
-      --padding-horizontal--default: 0px;
-      --border-color--default: transparent;
-      padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
-      background-color: var(--background-color, var(--background-color--default));
-      border-bottom: 1px solid var(--border-color, var(--border-color--default));
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 327px
-    }
-
-    @media (min-width:375px) {
-      umc-column-section {
-        width: 100%
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column-section {
-        -ms-flex-direction: row;
-        flex-direction: row;
-        width: 656px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column-section {
-        width: 912px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column-section {
-        width: 1328px
-      }
-    }
-
-    umc-column-section.justify-columns {
-      -ms-flex-pack: justify;
-      justify-content: space-between
-    }
-  </style>
-  <style sty-id="sc-umc-content-section">
-    umc-content-section {
-      --margin-bottom--default: 56px;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 327px
-    }
-
-    @media (min-width:375px) {
-      umc-content-section {
-        width: 100%
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-section {
-        -ms-flex-direction: row;
-        flex-direction: row;
-        width: 656px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-section {
-        width: 912px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-section {
-        width: 1328px
-      }
-    }
-
-    umc-content-section.justify-columns {
-      -ms-flex-pack: justify;
-      justify-content: space-between
-    }
-  </style>
-  <style sty-id="sc-umc-column">
-    umc-column {
-      --background-color--default: $white;
-      --border-color--default: $white;
-      --text-color--default: $black;
-      --font-size--default: $black;
-      color: red;
-      background-color: var(--background-color, var(--background-color--default));
-      color: var(--text-color, var(--text-color--default));
-      border: 1px dotted rgba(0, 0, 0, .3);
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-column {
-        width: 33px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column {
-        width: 65px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column {
-        width: 59px;
-        margin-right: 56px
-      }
-    }
-
-    umc-column.direction--horizontal {
-      -ms-flex-direction: row;
-      flex-direction: row
-    }
-
-    umc-column:last-child {
-      margin-right: 0
-    }
-
-    @media (min-width:375px) {
-      umc-column.empty {
-        visibility: hidden
-      }
-    }
-
-    umc-column.width--full {
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--small {
-        width: 122px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--small {
-        width: 186px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--small {
-        width: 289px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--medium {
-        width: 211px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--medium {
-        width: 307px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--medium {
-        width: 404px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--x-large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--x-large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--x-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--xx-large {
-        width: 389px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--xx-large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--xx-large {
-        width: 749px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-column.width--xxx-large {
-        width: 478px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-column.width--xxx-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-column.width--xxx-large {
-        width: 864px
-      }
-    }
-
-    umc-column.gutterless {
-      margin-right: 0
-    }
-
-    umc-column.align--center {
-      -ms-flex-pack: center;
-      justify-content: center
-    }
-
-    umc-column.align--right {
-      -ms-flex-pack: end;
-      justify-content: flex-end
-    }
-  </style>
-  <style sty-id="sc-umc-content-block">
-    umc-content-block {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 300;
-      font-size: 1.125rem;
-      line-height: 1.75rem;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-content-block {
-        width: 33px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block {
-        width: 65px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block {
-        width: 59px;
-        margin-right: 56px
-      }
-    }
-
-    umc-content-block.direction--horizontal {
-      -ms-flex-direction: row;
-      flex-direction: row
-    }
-
-    umc-content-block:last-child {
-      margin-right: 0
-    }
-
-    @media (min-width:375px) {
-      umc-content-block.empty {
-        visibility: hidden
-      }
-    }
-
-    umc-content-block.width--full {
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--small {
-        width: 122px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--small {
-        width: 186px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--small {
-        width: 289px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--medium {
-        width: 211px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--medium {
-        width: 307px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--medium {
-        width: 404px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--x-large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--x-large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--x-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--xx-large {
-        width: 389px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--xx-large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--xx-large {
-        width: 749px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-content-block.width--xxx-large {
-        width: 478px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-content-block.width--xxx-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-content-block.width--xxx-large {
-        width: 864px
-      }
-    }
-
-    umc-content-block.gutterless {
-      margin-right: 0
-    }
-
-    umc-content-block.align--center {
-      -ms-flex-pack: center;
-      justify-content: center
-    }
-
-    umc-content-block.align--right {
-      -ms-flex-pack: end;
-      justify-content: flex-end
-    }
-  </style>
-  <style sty-id="sc-umc-sidebar">
-    umc-sidebar {
-      --background-color--default: #f0f5f5;
-      --padding-vertical--default: 24px;
-      --padding-horizontal--default: 24px;
-      --border-color--default: transparent;
-      padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
-      background-color: var(--background-color, var(--background-color--default));
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar {
-        width: 33px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar {
-        width: 65px;
-        margin-right: 56px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar {
-        width: 59px;
-        margin-right: 56px
-      }
-    }
-
-    umc-sidebar.direction--horizontal {
-      -ms-flex-direction: row;
-      flex-direction: row
-    }
-
-    umc-sidebar:last-child {
-      margin-right: 0
-    }
-
-    @media (min-width:375px) {
-      umc-sidebar.empty {
-        visibility: hidden
-      }
-    }
-
-    umc-sidebar.width--full {
-      width: 100%
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--small {
-        width: 122px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--small {
-        width: 186px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--small {
-        width: 289px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--medium {
-        width: 211px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--medium {
-        width: 307px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--medium {
-        width: 404px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--x-large {
-        width: 300px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--x-large {
-        width: 428px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--x-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--xx-large {
-        width: 389px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--xx-large {
-        width: 519px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--xx-large {
-        width: 749px
-      }
-    }
-
-    @media (min-width:768px) {
-      umc-sidebar.width--xxx-large {
-        width: 478px
-      }
-    }
-
-    @media (min-width:1024px) {
-      umc-sidebar.width--xxx-large {
-        width: 634px
-      }
-    }
-
-    @media (min-width:1440px) {
-      umc-sidebar.width--xxx-large {
-        width: 864px
-      }
-    }
-
-    umc-sidebar.gutterless {
-      margin-right: 0
-    }
-
-    umc-sidebar.align--center {
-      -ms-flex-pack: center;
-      justify-content: center
-    }
-
-    umc-sidebar.align--right {
-      -ms-flex-pack: end;
-      justify-content: flex-end
-    }
-  </style>
-  <style sty-id="sc-umc-list">
-    umc-list {
-      --text-color--default: $black;
-      --text-size--default: 14px;
-      --margin-bottom--default: 0;
-      margin-bottom: var(--margin-bottom, var(--margin-bottom--default))
-    }
-
-    umc-list h3 {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 500;
-      font-size: 18px;
-      margin: 0;
-      line-height: 1.5rem;
-      color: #131516
-    }
-  </style>
-  <style sty-id="sc-umc-menu-toggle">
-    umc-menu-toggle {
-      display: inline
-    }
-
-    umc-menu-toggle h3 {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 500;
-      font-size: 1.25rem;
-      color: #00778a;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      margin: 0
-    }
-
-    umc-menu-toggle .icon--before {
-      -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse
-    }
-
-    umc-menu-toggle .label {
-      display: none
-    }
-
-    @media (min-width:768px) {
-      umc-menu-toggle .label {
-        display: inline;
-        margin: 0 8px
-      }
-    }
-
-    umc-menu-toggle .icon {
-      height: 24px
-    }
-
-    umc-menu-toggle .icon--before .icon {
-      margin-left: 0
-    }
-  </style>
-  <style sty-id="sc-umc-logo">
-    umc-logo {
-      display: block
-    }
-
-    umc-logo img {
-      width: 200px
-    }
-
-    @media (min-width:768px) {
-      umc-logo img {
-        width: 260px
-      }
-    }
-  </style>
-  <style sty-id="sc-umc-title-block">
-    umc-title-block {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 300;
-      font-size: 3rem;
-      margin: 0;
-      line-height: 3.5rem;
-      color: #131516
-    }
-
-    umc-title-block.large {
-      font-size: 3rem
-    }
-
-    umc-title-block.regular {
-      font-size: 2rem
-    }
-  </style>
-  <style sty-id="sc-umc-rich-text-block">
-    umc-rich-text-block {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 300;
-      font-size: 1.125rem;
-      line-height: 1.75rem
-    }
-  </style>
-  <style sty-id="sc-umc-link-list">
-    /*!@:host*/
-    .sc-umc-link-list-h {
-      --text-color--default: $black;
-      --text-size--default: 14px;
-      --margin-bottom--default: 24px;
-      margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
-      display: block
-    }
-
-    /*!@:host h3*/
-    .sc-umc-link-list-h h3.sc-umc-link-list {
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 500;
-      font-size: 18px;
-      margin: 0;
-      line-height: 1.5rem;
-      color: #131516
-    }
-
-    /*!@:host ul*/
-    .sc-umc-link-list-h ul.sc-umc-link-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0
-    }
-
-    @media (min-width:768px) {
-
-      /*!@:host .horizontal li*/
-      .sc-umc-link-list-h .horizontal.sc-umc-link-list li.sc-umc-link-list {
-        display: inline
-      }
-    }
-
-    /*!@:host .always-horizontal li*/
-    .sc-umc-link-list-h .always-horizontal.sc-umc-link-list li.sc-umc-link-list {
-      display: inline
-    }
-
-    /*!@:host li*/
-    .sc-umc-link-list-h li.sc-umc-link-list {
-      margin-right: 24px;
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 300;
-      font-size: var(--text-size, var(--text-size--default));
-      color: var(--text-color, var(--text-color--default));
-      line-height: 1.5rem
-    }
-
-    /*!@:host li.active*/
-    .sc-umc-link-list-h li.active.sc-umc-link-list {
-      font-weight: 500
-    }
-
-    /*!@:host .icon*/
-    .sc-umc-link-list-h .icon.sc-umc-link-list {
-      fill: #fff
-    }
-  </style>
-  <style sty-id="sc-umc-list-item">
-    umc-list-item {
-      display: list-item;
-      list-style-type: none;
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 300;
-      font-size: var(--text-size, var(--text-size--default));
-      line-height: 1.5rem
-    }
-
-    umc-list-item,
-    umc-list-item a {
-      color: var(--text-color, var(--text-color--default))
-    }
-
-    umc-list-item a {
-      text-decoration: none
-    }
-
-    umc-list-item a:hover {
-      text-decoration: underline
-    }
-
-    @media (min-width:768px) {
-
-      .umc-list_horizontal--always umc-list-item,
-      .umc-list_horizontal umc-list-item {
-        display: inline;
-        margin-right: 24px
-      }
-    }
-
-    .umc-list_horizontal--always umc-list-item:last-child,
-    .umc-list_horizontal umc-list-item:last-child {
-      margin-right: 0
-    }
-
-    .font-style--big umc-list-item {
-      font-size: 1.375rem;
-      line-height: 3.5rem;
-      font-weight: 500;
-      border-bottom: 1px solid #00778a
-    }
-
-    .font-style--big umc-list-item:last-child {
-      border-bottom-width: 0
-    }
-
-    .font-style--regular umc-list-item {
-      font-size: 1.125rem;
-      line-height: 2.5rem
-    }
-  </style>
-  <style sty-id="sc-umc-list-header">
-    umc-list-header {
-      display: block;
-      font-family: Museo Sans Rounded, sans-serif;
-      font-weight: 500;
-      font-size: 1.375rem;
-      line-height: 3.5rem
-    }
-  </style>
-  <style sty-id="sc-umc-icon">
-    umc-icon {
-      display: inline
-    }
-
-    umc-icon svg {
-      width: 18px;
-      height: 18px
-    }
-
-    umc-icon.diapositive svg {
-      fill: #fff
-    }
-  </style>
-  <link rel=modulepreload href="/build/p-bnh9ucql.js">
-  <link rel=modulepreload href="/build/p-11061111.js">
-  <link rel=modulepreload href="/build/p-7pkimhms.entry.js">
-  <!-- <script type=module src="/build/p-bnh9ucql.js" data-resources-url="/build/"
-    data-stencil-namespace="umc-research"></script>
-  <script nomodule src="/build/umc-research.js"></script> -->
-  <style>
-    @font-face {
+<!doctype html><html dir=ltr lang=en class=hydrated><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<title>Amsterdam UMC</title>
+<style sty-id="sc-umc-section">umc-section{-webkit-box-sizing:border-box;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column;--background-color--default:#fff;background-color:var(--background-color,var(--background-color--default));width:100%}umc-section.content-section{margin-top:56px}.closed umc-section{display:none;overflow:hidden}</style>
+<style sty-id="sc-umc-menu-section">umc-menu-section{-webkit-box-sizing:border-box;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-direction:column;flex-direction:column;background-color:#fff;width:100%}umc-menu-section.umc-section--sticky{position:-webkit-sticky;position:sticky;top:0}</style>
+<style sty-id="sc-umc-column-section">umc-column-section{--background-color--default:$white;--padding-vertical--default:20px;--padding-horizontal--default:0px;--border-color--default:transparent;padding:var(--padding-vertical,var(--padding-vertical--default)) var(--padding-horizontal,var(--padding-horizontal--default));background-color:var(--background-color,var(--background-color--default));border-bottom:1px solid var(--border-color,var(--border-color--default));display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-direction:column;flex-direction:column;width:327px}@media (min-width:375px){umc-column-section{width:100%}}@media (min-width:768px){umc-column-section{-ms-flex-direction:row;flex-direction:row;width:656px}}@media (min-width:1024px){umc-column-section{width:912px}}@media (min-width:1440px){umc-column-section{width:1328px}}umc-column-section.justify-columns{-ms-flex-pack:justify;justify-content:space-between}</style>
+<style sty-id="sc-umc-content-section">umc-content-section{--margin-bottom--default:56px;display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start;-ms-flex-align:start;align-items:flex-start;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-direction:column;flex-direction:column;width:327px}@media (min-width:375px){umc-content-section{width:100%}}@media (min-width:768px){umc-content-section{-ms-flex-direction:row;flex-direction:row;width:656px}}@media (min-width:1024px){umc-content-section{width:912px}}@media (min-width:1440px){umc-content-section{width:1328px}}umc-content-section.justify-columns{-ms-flex-pack:justify;justify-content:space-between}</style>
+<style sty-id="sc-umc-column">umc-column{--background-color--default:$white;--border-color--default:$white;--text-color--default:$black;--font-size--default:$black;color:red;background-color:var(--background-color,var(--background-color--default));color:var(--text-color,var(--text-color--default));border:1px dotted rgba(0,0,0,.3);-webkit-box-sizing:border-box;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:100%}@media (min-width:768px){umc-column{width:33px;margin-right:56px}}@media (min-width:1024px){umc-column{width:65px;margin-right:56px}}@media (min-width:1440px){umc-column{width:59px;margin-right:56px}}umc-column.direction--horizontal{-ms-flex-direction:row;flex-direction:row}umc-column:last-child{margin-right:0}@media (min-width:375px){umc-column.empty{visibility:hidden}}umc-column.width--full{width:100%}@media (min-width:768px){umc-column.width--small{width:122px}}@media (min-width:1024px){umc-column.width--small{width:186px}}@media (min-width:1440px){umc-column.width--small{width:289px}}@media (min-width:768px){umc-column.width--medium{width:211px}}@media (min-width:1024px){umc-column.width--medium{width:307px}}@media (min-width:1440px){umc-column.width--medium{width:404px}}@media (min-width:768px){umc-column.width--large{width:300px}}@media (min-width:1024px){umc-column.width--large{width:428px}}@media (min-width:1440px){umc-column.width--large{width:519px}}@media (min-width:768px){umc-column.width--x-large{width:300px}}@media (min-width:1024px){umc-column.width--x-large{width:428px}}@media (min-width:1440px){umc-column.width--x-large{width:634px}}@media (min-width:768px){umc-column.width--xx-large{width:389px}}@media (min-width:1024px){umc-column.width--xx-large{width:519px}}@media (min-width:1440px){umc-column.width--xx-large{width:749px}}@media (min-width:768px){umc-column.width--xxx-large{width:478px}}@media (min-width:1024px){umc-column.width--xxx-large{width:634px}}@media (min-width:1440px){umc-column.width--xxx-large{width:864px}}umc-column.gutterless{margin-right:0}umc-column.align--center{-ms-flex-pack:center;justify-content:center}umc-column.align--right{-ms-flex-pack:end;justify-content:flex-end}</style>
+<style sty-id="sc-umc-content-block">umc-content-block{font-family:Museo Sans Rounded,sans-serif;font-weight:300;font-size:1.125rem;line-height:1.75rem;-webkit-box-sizing:border-box;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:100%}@media (min-width:768px){umc-content-block{width:33px;margin-right:56px}}@media (min-width:1024px){umc-content-block{width:65px;margin-right:56px}}@media (min-width:1440px){umc-content-block{width:59px;margin-right:56px}}umc-content-block.direction--horizontal{-ms-flex-direction:row;flex-direction:row}umc-content-block:last-child{margin-right:0}@media (min-width:375px){umc-content-block.empty{visibility:hidden}}umc-content-block.width--full{width:100%}@media (min-width:768px){umc-content-block.width--small{width:122px}}@media (min-width:1024px){umc-content-block.width--small{width:186px}}@media (min-width:1440px){umc-content-block.width--small{width:289px}}@media (min-width:768px){umc-content-block.width--medium{width:211px}}@media (min-width:1024px){umc-content-block.width--medium{width:307px}}@media (min-width:1440px){umc-content-block.width--medium{width:404px}}@media (min-width:768px){umc-content-block.width--large{width:300px}}@media (min-width:1024px){umc-content-block.width--large{width:428px}}@media (min-width:1440px){umc-content-block.width--large{width:519px}}@media (min-width:768px){umc-content-block.width--x-large{width:300px}}@media (min-width:1024px){umc-content-block.width--x-large{width:428px}}@media (min-width:1440px){umc-content-block.width--x-large{width:634px}}@media (min-width:768px){umc-content-block.width--xx-large{width:389px}}@media (min-width:1024px){umc-content-block.width--xx-large{width:519px}}@media (min-width:1440px){umc-content-block.width--xx-large{width:749px}}@media (min-width:768px){umc-content-block.width--xxx-large{width:478px}}@media (min-width:1024px){umc-content-block.width--xxx-large{width:634px}}@media (min-width:1440px){umc-content-block.width--xxx-large{width:864px}}umc-content-block.gutterless{margin-right:0}umc-content-block.align--center{-ms-flex-pack:center;justify-content:center}umc-content-block.align--right{-ms-flex-pack:end;justify-content:flex-end}</style>
+<style sty-id="sc-umc-sidebar">umc-sidebar{--background-color--default:#f0f5f5;--padding-vertical--default:24px;--padding-horizontal--default:24px;--border-color--default:transparent;padding:var(--padding-vertical,var(--padding-vertical--default)) var(--padding-horizontal,var(--padding-horizontal--default));background-color:var(--background-color,var(--background-color--default));-webkit-box-sizing:border-box;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;width:100%}@media (min-width:768px){umc-sidebar{width:33px;margin-right:56px}}@media (min-width:1024px){umc-sidebar{width:65px;margin-right:56px}}@media (min-width:1440px){umc-sidebar{width:59px;margin-right:56px}}umc-sidebar.direction--horizontal{-ms-flex-direction:row;flex-direction:row}umc-sidebar:last-child{margin-right:0}@media (min-width:375px){umc-sidebar.empty{visibility:hidden}}umc-sidebar.width--full{width:100%}@media (min-width:768px){umc-sidebar.width--small{width:122px}}@media (min-width:1024px){umc-sidebar.width--small{width:186px}}@media (min-width:1440px){umc-sidebar.width--small{width:289px}}@media (min-width:768px){umc-sidebar.width--medium{width:211px}}@media (min-width:1024px){umc-sidebar.width--medium{width:307px}}@media (min-width:1440px){umc-sidebar.width--medium{width:404px}}@media (min-width:768px){umc-sidebar.width--large{width:300px}}@media (min-width:1024px){umc-sidebar.width--large{width:428px}}@media (min-width:1440px){umc-sidebar.width--large{width:519px}}@media (min-width:768px){umc-sidebar.width--x-large{width:300px}}@media (min-width:1024px){umc-sidebar.width--x-large{width:428px}}@media (min-width:1440px){umc-sidebar.width--x-large{width:634px}}@media (min-width:768px){umc-sidebar.width--xx-large{width:389px}}@media (min-width:1024px){umc-sidebar.width--xx-large{width:519px}}@media (min-width:1440px){umc-sidebar.width--xx-large{width:749px}}@media (min-width:768px){umc-sidebar.width--xxx-large{width:478px}}@media (min-width:1024px){umc-sidebar.width--xxx-large{width:634px}}@media (min-width:1440px){umc-sidebar.width--xxx-large{width:864px}}umc-sidebar.gutterless{margin-right:0}umc-sidebar.align--center{-ms-flex-pack:center;justify-content:center}umc-sidebar.align--right{-ms-flex-pack:end;justify-content:flex-end}</style>
+<style sty-id="sc-umc-list">umc-list{--text-color--default:$black;--text-size--default:14px;--margin-bottom--default:0;margin-bottom:var(--margin-bottom,var(--margin-bottom--default))}umc-list h3{font-family:Museo Sans Rounded,sans-serif;font-weight:500;font-size:18px;margin:0;line-height:1.5rem;color:#131516}</style>
+<style sty-id="sc-umc-menu-toggle">umc-menu-toggle{display:inline}umc-menu-toggle h3{font-family:Museo Sans Rounded,sans-serif;font-weight:500;font-size:1.25rem;color:#00778a;display:-ms-inline-flexbox;display:inline-flex;margin:0}umc-menu-toggle .icon--before{-ms-flex-direction:row-reverse;flex-direction:row-reverse}umc-menu-toggle .label{display:none}@media (min-width:768px){umc-menu-toggle .label{display:inline;margin:0 8px}}umc-menu-toggle .icon{height:24px}umc-menu-toggle .icon--before .icon{margin-left:0}</style>
+<style sty-id="sc-umc-logo">umc-logo{display:block}umc-logo img{width:200px}@media (min-width:768px){umc-logo img{width:260px}}</style>
+<style sty-id="sc-umc-title-block">umc-title-block{font-family:Museo Sans Rounded,sans-serif;font-weight:300;font-size:3rem;margin:0;line-height:3.5rem;color:#131516}umc-title-block.large{font-size:3rem}umc-title-block.regular{font-size:2rem}</style>
+<style sty-id="sc-umc-rich-text-block">umc-rich-text-block{font-family:Museo Sans Rounded,sans-serif;font-weight:300;font-size:1.125rem;line-height:1.75rem}</style>
+<style sty-id="sc-umc-link-list">/*!@:host*/.sc-umc-link-list-h{--text-color--default:$black;--text-size--default:14px;--margin-bottom--default:24px;margin-bottom:var(--margin-bottom,var(--margin-bottom--default));display:block}/*!@:host h3*/.sc-umc-link-list-h h3.sc-umc-link-list{font-family:Museo Sans Rounded,sans-serif;font-weight:500;font-size:18px;margin:0;line-height:1.5rem;color:#131516}/*!@:host ul*/.sc-umc-link-list-h ul.sc-umc-link-list{list-style-type:none;padding:0;margin:0}@media (min-width:768px){/*!@:host .horizontal li*/.sc-umc-link-list-h .horizontal.sc-umc-link-list li.sc-umc-link-list{display:inline}}/*!@:host .always-horizontal li*/.sc-umc-link-list-h .always-horizontal.sc-umc-link-list li.sc-umc-link-list{display:inline}/*!@:host li*/.sc-umc-link-list-h li.sc-umc-link-list{margin-right:24px;font-family:Museo Sans Rounded,sans-serif;font-weight:300;font-size:var(--text-size,var(--text-size--default));color:var(--text-color,var(--text-color--default));line-height:1.5rem}/*!@:host li.active*/.sc-umc-link-list-h li.active.sc-umc-link-list{font-weight:500}/*!@:host .icon*/.sc-umc-link-list-h .icon.sc-umc-link-list{fill:#fff}</style>
+<style sty-id="sc-umc-list-item">umc-list-item{display:list-item;list-style-type:none;font-family:Museo Sans Rounded,sans-serif;font-weight:300;font-size:var(--text-size,var(--text-size--default));line-height:1.5rem}umc-list-item,umc-list-item a{color:var(--text-color,var(--text-color--default))}umc-list-item a{text-decoration:none}umc-list-item a:hover{text-decoration:underline}@media (min-width:768px){.umc-list_horizontal--always umc-list-item,.umc-list_horizontal umc-list-item{display:inline;margin-right:24px}}.umc-list_horizontal--always umc-list-item:last-child,.umc-list_horizontal umc-list-item:last-child{margin-right:0}.font-style--big umc-list-item{font-size:1.375rem;line-height:3.5rem;font-weight:500;border-bottom:1px solid #00778a}.font-style--big umc-list-item:last-child{border-bottom-width:0}.font-style--regular umc-list-item{font-size:1.125rem;line-height:2.5rem}</style>
+<style sty-id="sc-umc-list-header">umc-list-header{display:block;font-family:Museo Sans Rounded,sans-serif;font-weight:500;font-size:1.375rem;line-height:3.5rem}</style>
+<style sty-id="sc-umc-icon">umc-icon{display:inline}umc-icon svg{width:18px;height:18px}umc-icon.diapositive svg{fill:#fff}</style>
+<link rel=modulepreload href="/build/p-bnh9ucql.js">
+<link rel=modulepreload href="/build/p-11061111.js">
+<link rel=modulepreload href="/build/p-7pkimhms.entry.js">
+<script type=module src="/build/p-bnh9ucql.js" data-resources-url="/build/" data-stencil-namespace="umc-research"></script>
+<script nomodule src="/build/umc-research.js"></script>
+<style>@font-face {
       font-family: 'Museo Sans Rounded';
       src: url("assets/museosansrounded-300.woff") format("woff");
       font-weight: 300;
       font-style: normal;
-      font-display: fallback;
+      font-display: fallback; 
     }
 
     @font-face {
@@ -939,7 +35,7 @@
       src: url("assets/museosansrounded-500.woff") format("woff");
       font-weight: 500;
       font-style: normal;
-      font-display: fallback;
+      font-display: fallback; 
     }
 
     body {
@@ -962,10 +58,10 @@
       --padding-vertical: 8px;
     }
 
-
+   
 
     @media only screen and (min-width: 768px) {
-      umc-header-section.main-navigation {
+        umc-header-section.main-navigation {
         --padding-horizontal: 0;
       }
     }
@@ -974,7 +70,7 @@
       --padding-horizontal: 56px;
       --padding-vertical: 56px;
     }
-
+    
     umc-sidebar.content-sidebar umc-link-list {
       color: #00778a;
     }
@@ -1007,14 +103,14 @@
 
     umc-column-section.debug {
       box-sizing: border-box;
-      --background-color: #fafafa;
+      --background-color:#fafafa;
       margin-bottom: 8px;
     }
-
+    
     umc-column.submenu__main {
       font-size: 22px;
     }
-
+    
 
     umc-section.navigation-menu {
       background-color: #009cb4;
@@ -1046,458 +142,121 @@
       umc-header-section .column--right {
         order: -1;
       }
-    }
-  </style>
-  <link rel=canonical href="http://laika-repo.github.io/">
+    }</style>
+<link rel=canonical href="http://laika-repo.github.io/">
 </head>
+<body>  <umc-section class="locations-header closed hydrated" s-id=1><!--r.1--><!--o.0.2--><!--s.1.0.0.0.-->
+<umc-column-section class="location-switch justify-columns hydrated" s-id=2 c-id=0.2><!--r.2--><!--o.0.5--><!--s.2.0.0.0.-->
+<umc-column class="direction--horizontal align--center width--full width--single align--left hydrated"
+s-id=3 c-id=0.5><!--r.3--><!--o.0.8--><!--s.3.0.0.0.--> <umc-list class="umc-list_horizontal--always hydrated"
+s-id=4 c-id=0.8><!--r.4--><!--o.0.11--><!--o.0.13--><!--o.0.15--><!--s.4.0.0.0.--> <umc-list-item class=hydrated
+s-id=5 c-id=0.11><!--r.5--><!--o.0.17--><!--s.5.0.0.0.--><a href=# c-id=0.17>Healthcare</a></umc-list-item>
+<umc-list-item class=hydrated s-id=6 c-id=0.13><!--r.6--><!--o.0.18--><!--s.6.0.0.0.--><a href=#
+umc-list-item--active="" c-id=0.18>Research</a></umc-list-item> <umc-list-item class=hydrated s-id=7 c-id=0.15><!--r.7--><!--o.0.19--><!--s.7.0.0.0.--><a
+href=# c-id=0.19>Health campus</a></umc-list-item> </umc-list> </umc-column> </umc-column-section> </umc-section>
+<umc-menu-section class="main-navigation umc-section--sticky open hydrated" s-id=8><!--r.8--> <!--o.0.21-->
+<!--o.0.23--> <!--s.8.0.0.0.navigation--><umc-column-section slot=navigation class="justify-columns hydrated"
+s-id=9 c-id=0.21><!--r.9--><!--o.0.26--><!--o.0.28--><!--o.0.30--><!--s.9.0.0.0.--> <umc-column class="width--small align--left direction--horizontal vertical-align--middle width--single hydrated"
+s-id=10 c-id=0.26><!--r.10--><!--o.0.33--><!--s.10.0.0.0.--> <umc-menu-toggle label=Menu reverse=true
+icon="assets/icon-hamburger.svg" class=hydrated s-id=11 c-id=0.33><!--r.11--><h3 class="icon--before"
+c-id=11.0.0.0><span class=label c-id=11.1.1.0><!--t.11.2.2.0-->Menu</span><img class=icon slot=2 src="assets/icon-hamburger.svg"
+c-id=11.3.1.1></h3></umc-menu-toggle> </umc-column> <umc-column class="width--medium align--center vertical-align--middle width--single align--left hydrated"
+s-id=12 c-id=0.28><!--r.12--><!--o.0.36--><!--s.12.0.0.0.--> <umc-logo src="assets/logo-aumc.svg" class=hydrated
+s-id=13 c-id=0.36><!--r.13--><img src="assets/logo-aumc.svg" c-id=13.0.0.0></umc-logo> </umc-column> <umc-column
+class="width--small align--right direction--horizontal vertical-align--middle width--single align--left hydrated"
+s-id=14 c-id=0.30><!--r.14--><!--o.0.39--><!--s.14.0.0.0.--> <umc-menu-toggle label=Search icon="assets/icon-search.svg"
+class=hydrated s-id=15 c-id=0.39><!--r.15--><h3 c-id=15.0.0.0><span class=label c-id=15.1.1.0><!--t.15.2.2.0-->Search</span><img
+class=icon slot=2 src="assets/icon-search.svg" c-id=15.3.1.1></h3></umc-menu-toggle> </umc-column> </umc-column-section><!--s.8.1.0.1.menu--><umc-section
+class="navigation-menu closed hydrated" slot=menu s-id=16 c-id=0.23><!--r.16--><!--o.0.42--><!--s.16.0.0.0.-->
+<umc-column-section class=hydrated s-id=17 c-id=0.42><!--r.17--><!--o.0.45--><!--o.0.47--><!--o.0.49--><!--s.17.0.0.0.-->
+<umc-column width=large class="width--large align--left hydrated" s-id=18 c-id=0.45><!--r.18--><!--o.0.52--><!--s.18.0.0.0.-->
+<umc-list class="font-style--big hydrated" s-id=19 c-id=0.52><!--r.19--><!--o.0.55--><!--o.0.57--><!--o.0.59--><!--o.0.61--><!--o.0.63--><!--s.19.0.0.0.-->
+<umc-list-item class=hydrated s-id=20 c-id=0.55><!--r.20--><!--o.0.65--><!--s.20.0.0.0.--><a href=#
+c-id=0.65>Amsterdam UMC Research</a></umc-list-item> <umc-list-item class=hydrated s-id=21 c-id=0.57><!--r.21--><!--o.0.66--><!--s.21.0.0.0.--><a
+href=# c-id=0.66>Researchers</a></umc-list-item> <umc-list-item class=hydrated s-id=22 c-id=0.59><!--r.22--><!--o.0.67--><!--s.22.0.0.0.--><a
+href=# c-id=0.67>Research highlights</a></umc-list-item> <umc-list-item class=hydrated s-id=23 c-id=0.61><!--r.23--><!--o.0.68--><!--s.23.0.0.0.--><a
+href=# c-id=0.68>Core facilities</a></umc-list-item> <umc-list-item class=hydrated s-id=24 c-id=0.63><!--r.24--><!--o.0.69--><!--s.24.0.0.0.--><a
+href=# c-id=0.69>Impact</a></umc-list-item> </umc-list> </umc-column> <umc-column width-=small class="width--single align--left hydrated"
+s-id=25 c-id=0.47><!--r.25--><!--s.25.0.0.0.--></umc-column> <umc-column width=medium class="width--medium align--left hydrated"
+s-id=26 c-id=0.49><!--r.26--><!--o.0.71--><!--o.0.73--><!--s.26.0.0.0.--> <umc-list-header class=hydrated
+s-id=27 c-id=0.71><!--r.27--><!--o.0.75--><!--s.27.0.0.0.--><!--t.0.75-->More…</umc-list-header> <umc-list
+class="font-style--regular hydrated" s-id=28 c-id=0.73><!--r.28--><!--o.0.77--><!--o.0.79--><!--o.0.81--><!--o.0.83--><!--s.28.0.0.0.-->
+<umc-list-item class=hydrated s-id=29 c-id=0.77><!--r.29--><!--o.0.85--><!--s.29.0.0.0.--><a href=#
+c-id=0.85>Research institutes</a></umc-list-item> <umc-list-item class=hydrated s-id=30 c-id=0.79><!--r.30--><!--o.0.86--><!--s.30.0.0.0.--><a
+href=# c-id=0.86>Departments</a></umc-list-item> <umc-list-item class=hydrated s-id=31 c-id=0.81><!--r.31--><!--o.0.87--><!--s.31.0.0.0.--><a
+href=# c-id=0.87>Events</a></umc-list-item> <umc-list-item class=hydrated s-id=32 c-id=0.83><!--r.32--><!--o.0.88--><!--s.32.0.0.0.--><a
+href=# c-id=0.88>About</a></umc-list-item> </umc-list> </umc-column> </umc-column-section> </umc-section></umc-menu-section>
+<umc-section class="content-section closed hydrated" s-id=33><!--r.33--><!--o.0.90--><!--s.33.0.0.0.-->
+<umc-content-section class=hydrated s-id=34 c-id=0.90><!--r.34--> <!--o.0.93--> <!--o.0.95--> <!--s.34.0.0.0.main--><umc-content-block
+slot=main class="width--xx-large hydrated" s-id=35 c-id=0.93><!--r.35--><!--o.0.98--><!--o.0.100--><!--s.35.0.0.0.-->
+<umc-title-block title="Artificial Intelligence for the healthcare of tomorrow" class="regular hydrated"
+s-id=36 c-id=0.98><!--r.36--><!--t.36.0.0.0-->Artificial Intelligence for the healthcare of tomorrow</umc-title-block>
+<umc-rich-text-block class=hydrated s-id=37 c-id=0.100><!--r.37--><!--o.0.103--><!--o.0.105--><!--s.37.0.0.0.-->
+<p c-id=0.103> <b>The Dutch Cancer Society (KWF) has granted funding to our joint project "AI-DOC: 
+                Artificial Intelligence for better detection of cancer".
+</b>
+</p> <p c-id=0.105> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-<body>
-  <umc-section class='locations-header'>
-    <umc-column-section class="location-switch justify-columns">
-        <umc-column class='direction--horizontal align--center width--full'>
-          <umc-list class='umc-list_horizontal--always'>
-            <umc-list-item><a href="#">Healthcare</a></umc-list-item>
-            <umc-list-item><a href="#" umc-list-item--active>Research</a></umc-list-item>   
-            <umc-list-item><a href="#">Health campus</a></umc-list-item>                 
-          </umc-list>
-        </umc-column>
-    </umc-column-section>
-  </umc-section>
-
-  <!-- <umc-menu-section class='main-navigation umc-section--sticky'>
-      <umc-column-section slot='navigation' class='justify-columns'>
-        <umc-column class='width--small align--left direction--horizontal vertical-align--middle'>
-            <umc-menu-toggle label="Menu" reverse='true' icon='assets/icon-hamburger.svg'></umc-menu-toggle>
-        </umc-column>
-
-        <umc-column class='width--medium align--center vertical-align--middle'>
-          <umc-logo src='assets/logo-aumc.svg'></umc-logo>
-        </umc-column>
-
-        <umc-column class='width--small align--right direction--horizontal vertical-align--middle'>
-            <umc-menu-toggle label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
-        </umc-column>
-      </umc-column-section> -->
-  
-
-  <umc-menu-section class='main-navigation umc-section--sticky'>
-    <umc-column-section slot='navigation' class='justify-columns'>
-      <umc-column class='width--small align--left direction--horizontal vertical-align--middle'>
-        <umc-menu-toggle label=Menu reverse=true icon="assets/icon-hamburger.svg" class=hydrated s-id=11 c-id=0.33>
-          <!--r.11-->
-          <h3 class="icon--before" c-id=11.0.0.0><span class=label c-id=11.1.1.0>
-              <!--t.11.2.2.0-->Menu</span><img class=icon slot=2 src="assets/icon-hamburger.svg" c-id=11.3.1.1></h3>
-        </umc-menu-toggle>
-      </umc-column>
-      <umc-column class="width--medium align--center vertical-align--middle width--single align--left hydrated" s-id=12
-        c-id=0.28>
-        <!--r.12-->
-        <!--o.0.36-->
-        <!--s.12.0.0.0.-->
-        <umc-logo src="assets/logo-aumc.svg" class=hydrated s-id=13 c-id=0.36>
-          <!--r.13--><img src="assets/logo-aumc.svg" c-id=13.0.0.0></umc-logo>
-      </umc-column>
-      <umc-column
-        class="width--small align--right direction--horizontal vertical-align--middle width--single align--left hydrated"
-        s-id=14 c-id=0.30>
-        <!--r.14-->
-        <!--o.0.39-->
-        <!--s.14.0.0.0.-->
-        <umc-menu-toggle label=Search icon="assets/icon-search.svg" class=hydrated s-id=15 c-id=0.39>
-          <!--r.15-->
-          <h3 c-id=15.0.0.0><span class=label c-id=15.1.1.0>
-              <!--t.15.2.2.0-->Search</span><img class=icon slot=2 src="assets/icon-search.svg" c-id=15.3.1.1></h3>
-        </umc-menu-toggle>
-      </umc-column>
-    </umc-column-section>
-    <!--s.8.1.0.1.menu-->
-    <umc-section class="navigation-menu closed hydrated" slot=menu s-id=16 c-id=0.23>
-      <!--r.16-->
-      <!--o.0.42-->
-      <!--s.16.0.0.0.-->
-      <umc-column-section class=hydrated s-id=17 c-id=0.42>
-        <!--r.17-->
-        <!--o.0.45-->
-        <!--o.0.47-->
-        <!--o.0.49-->
-        <!--s.17.0.0.0.-->
-        <umc-column width=large class="width--large align--left hydrated" s-id=18 c-id=0.45>
-          <!--r.18-->
-          <!--o.0.52-->
-          <!--s.18.0.0.0.-->
-          <umc-list class="font-style--big hydrated" s-id=19 c-id=0.52>
-            <!--r.19-->
-            <!--o.0.55-->
-            <!--o.0.57-->
-            <!--o.0.59-->
-            <!--o.0.61-->
-            <!--o.0.63-->
-            <!--s.19.0.0.0.-->
-            <umc-list-item class=hydrated s-id=20 c-id=0.55>
-              <!--r.20-->
-              <!--o.0.65-->
-              <!--s.20.0.0.0.--><a href=# c-id=0.65>Amsterdam UMC Research</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=21 c-id=0.57>
-              <!--r.21-->
-              <!--o.0.66-->
-              <!--s.21.0.0.0.--><a href=# c-id=0.66>Researchers</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=22 c-id=0.59>
-              <!--r.22-->
-              <!--o.0.67-->
-              <!--s.22.0.0.0.--><a href=# c-id=0.67>Research highlights</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=23 c-id=0.61>
-              <!--r.23-->
-              <!--o.0.68-->
-              <!--s.23.0.0.0.--><a href=# c-id=0.68>Core facilities</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=24 c-id=0.63>
-              <!--r.24-->
-              <!--o.0.69-->
-              <!--s.24.0.0.0.--><a href=# c-id=0.69>Impact</a></umc-list-item>
-          </umc-list>
-        </umc-column>
-        <umc-column width-=small class="width--single align--left hydrated" s-id=25 c-id=0.47>
-          <!--r.25-->
-          <!--s.25.0.0.0.-->
-        </umc-column>
-        <umc-column width=medium class="width--medium align--left hydrated" s-id=26 c-id=0.49>
-          <!--r.26-->
-          <!--o.0.71-->
-          <!--o.0.73-->
-          <!--s.26.0.0.0.-->
-          <umc-list-header class=hydrated s-id=27 c-id=0.71>
-            <!--r.27-->
-            <!--o.0.75-->
-            <!--s.27.0.0.0.-->
-            <!--t.0.75-->More…</umc-list-header>
-          <umc-list class="font-style--regular hydrated" s-id=28 c-id=0.73>
-            <!--r.28-->
-            <!--o.0.77-->
-            <!--o.0.79-->
-            <!--o.0.81-->
-            <!--o.0.83-->
-            <!--s.28.0.0.0.-->
-            <umc-list-item class=hydrated s-id=29 c-id=0.77>
-              <!--r.29-->
-              <!--o.0.85-->
-              <!--s.29.0.0.0.--><a href=# c-id=0.85>Research institutes</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=30 c-id=0.79>
-              <!--r.30-->
-              <!--o.0.86-->
-              <!--s.30.0.0.0.--><a href=# c-id=0.86>Departments</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=31 c-id=0.81>
-              <!--r.31-->
-              <!--o.0.87-->
-              <!--s.31.0.0.0.--><a href=# c-id=0.87>Events</a></umc-list-item>
-            <umc-list-item class=hydrated s-id=32 c-id=0.83>
-              <!--r.32-->
-              <!--o.0.88-->
-              <!--s.32.0.0.0.--><a href=# c-id=0.88>About</a></umc-list-item>
-          </umc-list>
-        </umc-column>
-      </umc-column-section>
-    </umc-section>
-  </umc-menu-section>
-  <umc-section class="content-section closed hydrated" s-id=33>
-    <!--r.33-->
-    <!--o.0.90-->
-    <!--s.33.0.0.0.-->
-    <umc-content-section class=hydrated s-id=34 c-id=0.90>
-      <!--r.34-->
-      <!--o.0.93-->
-      <!--o.0.95-->
-      <!--s.34.0.0.0.main-->
-      <umc-content-block slot=main class="width--xx-large hydrated" s-id=35 c-id=0.93>
-        <!--r.35-->
-        <!--o.0.98-->
-        <!--o.0.100-->
-        <!--s.35.0.0.0.-->
-        <umc-title-block title="Artificial Intelligence for the healthcare of tomorrow" class="regular hydrated" s-id=36
-          c-id=0.98>
-          <!--r.36-->
-          <!--t.36.0.0.0-->Artificial Intelligence for the healthcare of tomorrow</umc-title-block>
-        <umc-rich-text-block class=hydrated s-id=37 c-id=0.100>
-          <!--r.37-->
-          <!--o.0.103-->
-          <!--o.0.105-->
-          <!--s.37.0.0.0.-->
-          <p c-id=0.103> <b>The Dutch Cancer Society (KWF) has granted funding to our joint project "AI-DOC:
-              Artificial Intelligence for better detection of cancer".
-            </b>
-          </p>
-          <p c-id=0.105> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum.
-
-            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est
-            eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
-            Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper,
-            ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum
-            consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo
-            eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed
-            malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur
-            augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu,
-            feugiat in, orci. In hac habitasse platea dictumst.
-          </p>
-        </umc-rich-text-block>
-      </umc-content-block>
-      <!--s.34.1.0.1.sidebar-->
-      <umc-sidebar class="content-sidebar width--medium hydrated" slot=sidebar s-id=38 c-id=0.95>
-        <!--r.38-->
-        <!--o.0.108-->
-        <!--o.0.110-->
-        <!--o.0.112-->
-        <!--o.0.114-->
-        <!--o.0.116-->
-        <!--s.38.0.0.0.content-->
-        <umc-link-list slot=content title=Team class="sc-umc-link-list-h hydrated" s-id=39 c-id=0.110>
-          <!--r.39-->
-          <!--o.0.119.-->
-          <umc-link-list-item label=Researcher hidden class="sc-umc-link-list-item-h hydrated" s-id=40 c-id=0.119>
-            <!--r.40-->
-          </umc-link-list-item>
-          <h3 class="sc-umc-link-list" c-id=39.0.0.0>
-            <!--t.39.1.1.0-->Team</h3>
-          <ul class="vertical sc-umc-link-list" c-id=39.2.0.1>
-            <li class="sc-umc-link-list sc-umc-link-list-s" c-id=39.3.1.0>
-              <!--s.39.4.2.0.icon-->
-              <!--t.39.5.2.1-->
-            </li>
-          </ul>
-        </umc-link-list>
-        <umc-link-list slot=content title=Projects class="sc-umc-link-list-h hydrated" s-id=41 c-id=0.112>
-          <!--r.41-->
-          <!--o.0.122.-->
-          <umc-link-list-item label="Cancer center" hidden class="sc-umc-link-list-item-h hydrated" s-id=42 c-id=0.122>
-            <!--r.42-->
-          </umc-link-list-item>
-          <!--o.0.124.-->
-          <umc-link-list-item label="Diabetes and Ramadan" hidden class="sc-umc-link-list-item-h hydrated" s-id=43
-            c-id=0.124>
-            <!--r.43-->
-          </umc-link-list-item>
-          <h3 class="sc-umc-link-list" c-id=41.0.0.0>
-            <!--t.41.1.1.0-->Projects</h3>
-          <ul class="vertical sc-umc-link-list" c-id=41.2.0.1>
-            <li class="sc-umc-link-list sc-umc-link-list-s" c-id=41.3.1.0>
-              <!--s.41.4.2.0.icon-->
-              <!--t.41.5.2.1-->
-            </li>
-            <li class="sc-umc-link-list sc-umc-link-list-s" c-id=41.6.1.1>
-              <!--s.41.7.2.0.icon-->
-              <!--t.41.8.2.1-->
-            </li>
-          </ul>
-        </umc-link-list>
-        <umc-link-list slot=content title=Projects class="sc-umc-link-list-h hydrated" s-id=44 c-id=0.114>
-          <!--r.44-->
-          <!--o.0.127.-->
-          <umc-link-list-item label="Diabetes and Ramadan" hidden class="sc-umc-link-list-item-h hydrated" s-id=45
-            c-id=0.127>
-            <!--r.45-->
-          </umc-link-list-item>
-          <h3 class="sc-umc-link-list" c-id=44.0.0.0>
-            <!--t.44.1.1.0-->Projects</h3>
-          <ul class="vertical sc-umc-link-list" c-id=44.2.0.1>
-            <li class="sc-umc-link-list sc-umc-link-list-s" c-id=44.3.1.0>
-              <!--s.44.4.2.0.icon-->
-              <!--t.44.5.2.1-->
-            </li>
-          </ul>
-        </umc-link-list>
-      </umc-sidebar>
-    </umc-content-section>
-  </umc-section>
-  <umc-section class="footer-links closed hydrated" s-id=46>
-    <!--r.46-->
-    <!--o.0.130-->
-    <!--s.46.0.0.0.-->
-    <umc-column-section class=hydrated s-id=47 c-id=0.130>
-      <!--r.47-->
-      <!--o.0.133-->
-      <!--o.0.135-->
-      <!--o.0.137-->
-      <!--s.47.0.0.0.-->
-      <umc-column width=medium class="width--medium align--left hydrated" s-id=48 c-id=0.133>
-        <!--r.48-->
-        <!--o.0.140-->
-        <!--s.48.0.0.0.-->
-        <umc-logo src="assets/logo-aumc--diap.svg" class=hydrated s-id=49 c-id=0.140>
-          <!--r.49--><img src="assets/logo-aumc--diap.svg" c-id=49.0.0.0></umc-logo>
-      </umc-column>
-      <umc-column width=small class="width--small align--left hydrated" s-id=50 c-id=0.135>
-        <!--r.50-->
-        <!--o.0.143-->
-        <!--s.50.0.0.0.-->
-        <umc-list class=hydrated s-id=51 c-id=0.143>
-          <!--r.51-->
-          <!--o.0.146-->
-          <!--o.0.148-->
-          <!--o.0.150-->
-          <!--o.0.152-->
-          <!--s.51.0.0.0.-->
-          <umc-list-item class=hydrated s-id=52 c-id=0.146>
-            <!--r.52-->
-            <!--o.0.154-->
-            <!--s.52.0.0.0.--><a href=# c-id=0.154>Projects</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=53 c-id=0.148>
-            <!--r.53-->
-            <!--o.0.155-->
-            <!--s.53.0.0.0.--><a href=# c-id=0.155>Core Facilities</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=54 c-id=0.150>
-            <!--r.54-->
-            <!--o.0.156-->
-            <!--s.54.0.0.0.--><a href=# c-id=0.156>Researchers</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=55 c-id=0.152>
-            <!--r.55-->
-            <!--o.0.157-->
-            <!--s.55.0.0.0.--><a href=# c-id=0.157>Impact</a></umc-list-item>
-        </umc-list>
-      </umc-column>
-      <umc-column width=medium class="width--medium align--left hydrated" s-id=56 c-id=0.137>
-        <!--r.56-->
-        <!--o.0.159-->
-        <!--s.56.0.0.0.-->
-        <umc-list class=hydrated s-id=57 c-id=0.159>
-          <!--r.57-->
-          <!--o.0.162-->
-          <!--o.0.164-->
-          <!--o.0.166-->
-          <!--o.0.168-->
-          <!--s.57.0.0.0.-->
-          <umc-list-item class=hydrated s-id=58 c-id=0.162>
-            <!--r.58-->
-            <!--o.0.170-->
-            <!--s.58.0.0.0.--><a href=# c-id=0.170>Events</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=59 c-id=0.164>
-            <!--r.59-->
-            <!--o.0.171-->
-            <!--s.59.0.0.0.--><a href=# c-id=0.171>Research institutes</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=60 c-id=0.166>
-            <!--r.60-->
-            <!--o.0.172-->
-            <!--s.60.0.0.0.--><a href=# c-id=0.172>Departments</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=61 c-id=0.168>
-            <!--r.61-->
-            <!--o.0.173-->
-            <!--s.61.0.0.0.--><a href=# c-id=0.173>About</a></umc-list-item>
-        </umc-list>
-      </umc-column>
-    </umc-column-section>
-  </umc-section>
-  <umc-section class="footer-colofon closed hydrated" s-id=62>
-    <!--r.62-->
-    <!--o.0.175-->
-    <!--s.62.0.0.0.-->
-    <umc-column-section class=hydrated s-id=63 c-id=0.175>
-      <!--r.63-->
-      <!--o.0.178-->
-      <!--o.0.180-->
-      <!--s.63.0.0.0.-->
-      <umc-column width="xx-large" class="width--xx-large align--left hydrated" s-id=64 c-id=0.178>
-        <!--r.64-->
-        <!--o.0.183-->
-        <!--s.64.0.0.0.-->
-        <umc-list class="umc-list_horizontal--always hydrated" s-id=65 c-id=0.183>
-          <!--r.65-->
-          <!--o.0.186-->
-          <!--o.0.188-->
-          <!--o.0.190-->
-          <!--o.0.192-->
-          <!--s.65.0.0.0.-->
-          <umc-list-item class=hydrated s-id=66 c-id=0.186>
-            <!--r.66-->
-            <!--o.0.194-->
-            <!--s.66.0.0.0.--><a href=# c-id=0.194>Privacy policy</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=67 c-id=0.188>
-            <!--r.67-->
-            <!--o.0.195-->
-            <!--s.67.0.0.0.--><a href=# c-id=0.195>Sitemap</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=68 c-id=0.190>
-            <!--r.68-->
-            <!--o.0.196-->
-            <!--s.68.0.0.0.--><a href=# c-id=0.196>Accountability</a></umc-list-item>
-          <umc-list-item class=hydrated s-id=69 c-id=0.192>
-            <!--r.69-->
-            <!--o.0.197-->
-            <!--s.69.0.0.0.--><a href=# c-id=0.197>Cookie settings</a></umc-list-item>
-        </umc-list>
-      </umc-column>
-      <umc-column width=medium class="direction--horizontal align--right width--medium align--left hydrated" s-id=70
-        c-id=0.180>
-        <!--r.70-->
-        <!--o.0.199-->
-        <!--s.70.0.0.0.-->
-        <umc-list class="umc-list_horizontal--always hydrated" s-id=71 c-id=0.199>
-          <!--r.71-->
-          <!--o.0.202-->
-          <!--o.0.204-->
-          <!--o.0.206-->
-          <!--o.0.208-->
-          <!--s.71.0.0.0.-->
-          <umc-list-item class=hydrated s-id=72 c-id=0.202>
-            <!--r.72-->
-            <!--o.0.211-->
-            <!--s.72.0.0.0.--> <a href=# c-id=0.211>
-              <umc-icon class="diapositive hydrated" s-id=73>
-                <!--r.73-->
-                <!--o.0.214-->
-                <!--s.73.0.0.0.--> <svg xmlns="http://www.w3.org/2000/svg" c-id=0.214>
-                  <path
-                    d="M18 0v18h-4.959v-7.39h2.654l.398-2.88H13.04V5.892c0-.834.249-1.402 1.528-1.402H16.2V1.912a23.243 23.243 0 00-2.378-.113c-2.351 0-3.962 1.342-3.962 3.807V7.73H7.2v2.88h2.66V18H0V0h18z">
-                  </path>
-                </svg> </umc-icon>
-            </a> </umc-list-item>
-          <umc-list-item class=hydrated s-id=74 c-id=0.204>
-            <!--r.74-->
-            <!--o.0.217-->
-            <!--s.74.0.0.0.-->
-            <a href=# c-id=0.217>
-              <umc-icon class="diapositive hydrated" s-id=75>
-                <!--r.75-->
-                <!--o.0.220-->
-                <!--s.75.0.0.0.-->
-                <svg xmlns="http://www.w3.org/2000/svg" c-id=0.220>
-                  <path
-                    d="M16.714 0H1.282C.575 0 0 .583 0 1.298v15.404C0 17.417.575 18 1.282 18h15.432c.707 0 1.286-.583 1.286-1.298V1.298C18 .583 17.421 0 16.714 0zM5.44 15.429H2.772v-8.59h2.672v8.59H5.44zM4.106 5.665a1.548 1.548 0 010-3.094 1.55 1.55 0 011.547 1.547c0 .856-.69 1.547-1.547 1.547zm11.335 9.764h-2.668V11.25c0-.996-.02-2.278-1.386-2.278-1.39 0-1.604 1.085-1.604 2.206v4.25H7.116v-8.59h2.559v1.174h.036c.358-.675 1.23-1.387 2.527-1.387 2.7 0 3.203 1.78 3.203 4.095v4.709z">
-                  </path>
-                </svg> </umc-icon>
-            </a> </umc-list-item>
-          <umc-list-item class=hydrated s-id=76 c-id=0.206>
-            <!--r.76-->
-            <!--o.0.223-->
-            <!--s.76.0.0.0.-->
-            <a href=# c-id=0.223>
-              <umc-icon class="diapositive hydrated" s-id=77>
-                <!--r.77-->
-                <!--o.0.226-->
-                <!--s.77.0.0.0.-->
-                <svg xmlns="http://www.w3.org/2000/svg" c-id=0.226>
-                  <path
-                    d="M19.748 3.986c.008.173.014.347.014.522C19.762 9.845 15.222 16 6.919 16c-2.55 0-4.921-.668-6.919-1.814.353.037.712.056 1.077.056 2.114 0 4.06-.645 5.606-1.73-1.976-.031-3.643-1.199-4.218-2.803a5.073 5.073 0 002.04-.07C2.439 9.267.885 7.634.885 5.678v-.052a4.9 4.9 0 002.044.506C1.717 5.408.919 4.17.919 2.77A3.7 3.7 0 011.533.74c2.226 2.443 5.552 4.052 9.303 4.22a3.646 3.646 0 01-.117-.92c0-2.231 2.021-4.04 4.513-4.04 1.3 0 2.472.491 3.294 1.276a9.699 9.699 0 002.867-.98c-.337.943-1.053 1.734-1.984 2.235A9.9 9.9 0 0022 1.895a8.718 8.718 0 01-2.252 2.09">
-                  </path>
-                </svg> </umc-icon>
-            </a> </umc-list-item>
-          <umc-list-item class=hydrated s-id=78 c-id=0.208>
-            <!--r.78-->
-            <!--o.0.229-->
-            <!--s.78.0.0.0.-->
-            <a href=# c-id=0.229>
-              <umc-icon class="diapositive hydrated" s-id=79>
-                <!--r.79-->
-                <!--o.0.232-->
-                <!--s.79.0.0.0.-->
-                <svg xmlns="http://www.w3.org/2000/svg" c-id=0.232>
-                  <path
-                    d="M5 0a5 5 0 00-5 5v8a5 5 0 005 5h8a5 5 0 005-5V5a5 5 0 00-5-5H5zm10 2a1 1 0 110 2 1 1 0 010-2zM9 4a5 5 0 11-.001 10.001A5 5 0 019 4zm0 2a3 3 0 100 6 3 3 0 000-6z">
-                  </path>
-                </svg> </umc-icon>
-            </a> </umc-list-item>
-        </umc-list>
-      </umc-column>
-    </umc-column-section>
-  </umc-section>
+Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.
+</p>
+</umc-rich-text-block> </umc-content-block><!--s.34.1.0.1.sidebar--><umc-sidebar class="content-sidebar width--medium hydrated"
+slot=sidebar s-id=38 c-id=0.95><!--r.38--> <!--o.0.108--> <!--o.0.110--> <!--o.0.112--> <!--o.0.114--> <!--o.0.116-->
+<!--s.38.0.0.0.content--><umc-link-list slot=content title=Team class="sc-umc-link-list-h hydrated"
+s-id=39 c-id=0.110><!--r.39--> <!--o.0.119.--><umc-link-list-item label=Researcher hidden class="sc-umc-link-list-item-h hydrated"
+s-id=40 c-id=0.119><!--r.40--></umc-link-list-item> <h3 class="sc-umc-link-list" c-id=39.0.0.0><!--t.39.1.1.0-->Team</h3><ul
+class="vertical sc-umc-link-list" c-id=39.2.0.1><li class="sc-umc-link-list sc-umc-link-list-s" c-id=39.3.1.0><!--s.39.4.2.0.icon--><!--t.39.5.2.1-->
+</li></ul></umc-link-list><umc-link-list slot=content title=Projects class="sc-umc-link-list-h hydrated"
+s-id=41 c-id=0.112><!--r.41--> <!--o.0.122.--><umc-link-list-item label="Cancer center" hidden class="sc-umc-link-list-item-h hydrated"
+s-id=42 c-id=0.122><!--r.42--></umc-link-list-item> <!--o.0.124.--><umc-link-list-item label="Diabetes and Ramadan"
+hidden class="sc-umc-link-list-item-h hydrated" s-id=43 c-id=0.124><!--r.43--></umc-link-list-item> <h3
+class="sc-umc-link-list" c-id=41.0.0.0><!--t.41.1.1.0-->Projects</h3><ul class="vertical sc-umc-link-list"
+c-id=41.2.0.1><li class="sc-umc-link-list sc-umc-link-list-s" c-id=41.3.1.0><!--s.41.4.2.0.icon--><!--t.41.5.2.1-->
+</li><li class="sc-umc-link-list sc-umc-link-list-s" c-id=41.6.1.1><!--s.41.7.2.0.icon--><!--t.41.8.2.1-->
+</li></ul></umc-link-list><umc-link-list slot=content title=Projects class="sc-umc-link-list-h hydrated"
+s-id=44 c-id=0.114><!--r.44--> <!--o.0.127.--><umc-link-list-item label="Diabetes and Ramadan" hidden
+class="sc-umc-link-list-item-h hydrated" s-id=45 c-id=0.127><!--r.45--></umc-link-list-item> <h3 class="sc-umc-link-list"
+c-id=44.0.0.0><!--t.44.1.1.0-->Projects</h3><ul class="vertical sc-umc-link-list" c-id=44.2.0.1><li
+class="sc-umc-link-list sc-umc-link-list-s" c-id=44.3.1.0><!--s.44.4.2.0.icon--><!--t.44.5.2.1--> </li></ul></umc-link-list></umc-sidebar></umc-content-section>
+</umc-section> <umc-section class="footer-links closed hydrated" s-id=46><!--r.46--><!--o.0.130--><!--s.46.0.0.0.-->
+<umc-column-section class=hydrated s-id=47 c-id=0.130><!--r.47--><!--o.0.133--><!--o.0.135--><!--o.0.137--><!--s.47.0.0.0.-->
+<umc-column width=medium class="width--medium align--left hydrated" s-id=48 c-id=0.133><!--r.48--><!--o.0.140--><!--s.48.0.0.0.-->
+<umc-logo src="assets/logo-aumc--diap.svg" class=hydrated s-id=49 c-id=0.140><!--r.49--><img src="assets/logo-aumc--diap.svg"
+c-id=49.0.0.0></umc-logo> </umc-column> <umc-column width=small class="width--small align--left hydrated"
+s-id=50 c-id=0.135><!--r.50--><!--o.0.143--><!--s.50.0.0.0.--> <umc-list class=hydrated s-id=51 c-id=0.143><!--r.51--><!--o.0.146--><!--o.0.148--><!--o.0.150--><!--o.0.152--><!--s.51.0.0.0.-->
+<umc-list-item class=hydrated s-id=52 c-id=0.146><!--r.52--><!--o.0.154--><!--s.52.0.0.0.--><a href=#
+c-id=0.154>Projects</a></umc-list-item> <umc-list-item class=hydrated s-id=53 c-id=0.148><!--r.53--><!--o.0.155--><!--s.53.0.0.0.--><a
+href=# c-id=0.155>Core Facilities</a></umc-list-item> <umc-list-item class=hydrated s-id=54 c-id=0.150><!--r.54--><!--o.0.156--><!--s.54.0.0.0.--><a
+href=# c-id=0.156>Researchers</a></umc-list-item> <umc-list-item class=hydrated s-id=55 c-id=0.152><!--r.55--><!--o.0.157--><!--s.55.0.0.0.--><a
+href=# c-id=0.157>Impact</a></umc-list-item> </umc-list> </umc-column> <umc-column width=medium class="width--medium align--left hydrated"
+s-id=56 c-id=0.137><!--r.56--><!--o.0.159--><!--s.56.0.0.0.--> <umc-list class=hydrated s-id=57 c-id=0.159><!--r.57--><!--o.0.162--><!--o.0.164--><!--o.0.166--><!--o.0.168--><!--s.57.0.0.0.-->
+<umc-list-item class=hydrated s-id=58 c-id=0.162><!--r.58--><!--o.0.170--><!--s.58.0.0.0.--><a href=#
+c-id=0.170>Events</a></umc-list-item> <umc-list-item class=hydrated s-id=59 c-id=0.164><!--r.59--><!--o.0.171--><!--s.59.0.0.0.--><a
+href=# c-id=0.171>Research institutes</a></umc-list-item> <umc-list-item class=hydrated s-id=60 c-id=0.166><!--r.60--><!--o.0.172--><!--s.60.0.0.0.--><a
+href=# c-id=0.172>Departments</a></umc-list-item> <umc-list-item class=hydrated s-id=61 c-id=0.168><!--r.61--><!--o.0.173--><!--s.61.0.0.0.--><a
+href=# c-id=0.173>About</a></umc-list-item> </umc-list> </umc-column> </umc-column-section> </umc-section>
+<umc-section class="footer-colofon closed hydrated" s-id=62><!--r.62--><!--o.0.175--><!--s.62.0.0.0.-->
+<umc-column-section class=hydrated s-id=63 c-id=0.175><!--r.63--><!--o.0.178--><!--o.0.180--><!--s.63.0.0.0.-->
+<umc-column width="xx-large" class="width--xx-large align--left hydrated" s-id=64 c-id=0.178><!--r.64--><!--o.0.183--><!--s.64.0.0.0.-->
+<umc-list class="umc-list_horizontal--always hydrated" s-id=65 c-id=0.183><!--r.65--><!--o.0.186--><!--o.0.188--><!--o.0.190--><!--o.0.192--><!--s.65.0.0.0.-->
+<umc-list-item class=hydrated s-id=66 c-id=0.186><!--r.66--><!--o.0.194--><!--s.66.0.0.0.--><a href=#
+c-id=0.194>Privacy policy</a></umc-list-item> <umc-list-item class=hydrated s-id=67 c-id=0.188><!--r.67--><!--o.0.195--><!--s.67.0.0.0.--><a
+href=# c-id=0.195>Sitemap</a></umc-list-item> <umc-list-item class=hydrated s-id=68 c-id=0.190><!--r.68--><!--o.0.196--><!--s.68.0.0.0.--><a
+href=# c-id=0.196>Accountability</a></umc-list-item> <umc-list-item class=hydrated s-id=69 c-id=0.192><!--r.69--><!--o.0.197--><!--s.69.0.0.0.--><a
+href=# c-id=0.197>Cookie settings</a></umc-list-item> </umc-list> </umc-column> <umc-column width=medium
+class="direction--horizontal align--right width--medium align--left hydrated" s-id=70 c-id=0.180><!--r.70--><!--o.0.199--><!--s.70.0.0.0.-->
+<umc-list class="umc-list_horizontal--always hydrated" s-id=71 c-id=0.199><!--r.71--><!--o.0.202--><!--o.0.204--><!--o.0.206--><!--o.0.208--><!--s.71.0.0.0.-->
+<umc-list-item class=hydrated s-id=72 c-id=0.202><!--r.72--><!--o.0.211--><!--s.72.0.0.0.--> <a href=#
+c-id=0.211> <umc-icon class="diapositive hydrated" s-id=73><!--r.73--><!--o.0.214--><!--s.73.0.0.0.--> <svg xmlns="http://www.w3.org/2000/svg"
+c-id=0.214> <path d="M18 0v18h-4.959v-7.39h2.654l.398-2.88H13.04V5.892c0-.834.249-1.402 1.528-1.402H16.2V1.912a23.243 23.243 0 00-2.378-.113c-2.351 0-3.962 1.342-3.962 3.807V7.73H7.2v2.88h2.66V18H0V0h18z"></path>
+</svg> </umc-icon> </a> </umc-list-item> <umc-list-item class=hydrated s-id=74 c-id=0.204><!--r.74--><!--o.0.217--><!--s.74.0.0.0.-->
+<a href=# c-id=0.217> <umc-icon class="diapositive hydrated" s-id=75><!--r.75--><!--o.0.220--><!--s.75.0.0.0.-->
+<svg xmlns="http://www.w3.org/2000/svg" c-id=0.220> <path d="M16.714 0H1.282C.575 0 0 .583 0 1.298v15.404C0 17.417.575 18 1.282 18h15.432c.707 0 1.286-.583 1.286-1.298V1.298C18 .583 17.421 0 16.714 0zM5.44 15.429H2.772v-8.59h2.672v8.59H5.44zM4.106 5.665a1.548 1.548 0 010-3.094 1.55 1.55 0 011.547 1.547c0 .856-.69 1.547-1.547 1.547zm11.335 9.764h-2.668V11.25c0-.996-.02-2.278-1.386-2.278-1.39 0-1.604 1.085-1.604 2.206v4.25H7.116v-8.59h2.559v1.174h.036c.358-.675 1.23-1.387 2.527-1.387 2.7 0 3.203 1.78 3.203 4.095v4.709z"></path>
+</svg> </umc-icon> </a> </umc-list-item> <umc-list-item class=hydrated s-id=76 c-id=0.206><!--r.76--><!--o.0.223--><!--s.76.0.0.0.-->
+<a href=# c-id=0.223> <umc-icon class="diapositive hydrated" s-id=77><!--r.77--><!--o.0.226--><!--s.77.0.0.0.-->
+<svg xmlns="http://www.w3.org/2000/svg" c-id=0.226> <path d="M19.748 3.986c.008.173.014.347.014.522C19.762 9.845 15.222 16 6.919 16c-2.55 0-4.921-.668-6.919-1.814.353.037.712.056 1.077.056 2.114 0 4.06-.645 5.606-1.73-1.976-.031-3.643-1.199-4.218-2.803a5.073 5.073 0 002.04-.07C2.439 9.267.885 7.634.885 5.678v-.052a4.9 4.9 0 002.044.506C1.717 5.408.919 4.17.919 2.77A3.7 3.7 0 011.533.74c2.226 2.443 5.552 4.052 9.303 4.22a3.646 3.646 0 01-.117-.92c0-2.231 2.021-4.04 4.513-4.04 1.3 0 2.472.491 3.294 1.276a9.699 9.699 0 002.867-.98c-.337.943-1.053 1.734-1.984 2.235A9.9 9.9 0 0022 1.895a8.718 8.718 0 01-2.252 2.09"></path>
+</svg> </umc-icon> </a> </umc-list-item> <umc-list-item class=hydrated s-id=78 c-id=0.208><!--r.78--><!--o.0.229--><!--s.78.0.0.0.-->
+<a href=# c-id=0.229> <umc-icon class="diapositive hydrated" s-id=79><!--r.79--><!--o.0.232--><!--s.79.0.0.0.-->
+<svg xmlns="http://www.w3.org/2000/svg" c-id=0.232> <path d="M5 0a5 5 0 00-5 5v8a5 5 0 005 5h8a5 5 0 005-5V5a5 5 0 00-5-5H5zm10 2a1 1 0 110 2 1 1 0 010-2zM9 4a5 5 0 11-.001 10.001A5 5 0 019 4zm0 2a3 3 0 100 6 3 3 0 000-6z"></path>
+</svg> </umc-icon> </a> </umc-list-item> </umc-list> </umc-column> </umc-column-section> </umc-section>
 </body>
-
 </html>
