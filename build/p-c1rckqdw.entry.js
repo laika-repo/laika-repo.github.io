@@ -1,0 +1,1 @@
+import{r as t,h as r,H as s}from"./p-11061111.js";const e=class{constructor(r){t(this,r)}render(){return r(s,null,r("slot",null))}static get style(){return"umc-content-header{--background-color:#f0f5f5}"}};export{e as umc_theme};
