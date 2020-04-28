@@ -5,9 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
     <title>Amsterdam UMC</title>
-    <link rel="modulepreload" href="/build/p-pr1qbeeo.js">
-    <link rel="modulepreload" href="/build/p-7fac9afc.js">
-    <link rel="modulepreload" href="/build/p-yuxx5qyv.entry.js">
 
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
@@ -36,7 +33,7 @@
                 <umc-menu-toggle label="Search" icon="assets/icon-search.svg"></umc-menu-toggle>
             </umc-column>
         </umc-column-section>
-        <umc-section class="navigation-menu" slot="menu">
+        <umc-section class="navigation-menu closed" slot="menu">
             <umc-column-section>
                 <umc-column width="large">
                     <umc-list class="umc-navigation-list--primary">
@@ -59,7 +56,7 @@
                 </umc-column>
             </umc-column-section>
         </umc-section>
-        <umc-section class="search-menu" slot="menu">
+        <umc-section class="search-menu closed" slot="menu">
             <umc-column-section>
                 <umc-column width="full">
                     <umc-search-input> <input type="text" placeholder="Keyword">
