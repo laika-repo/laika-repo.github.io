@@ -1697,3 +1697,11 @@ umc-button {
     font-style: normal;
     font-display: fallback;
 }
+
+umc-section.footer-links {
+    --background-color: #003741;
+}
+
+umc-section.footer-colofon {
+    --background-color: #00778a;
+}
