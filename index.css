@@ -1524,9 +1524,6 @@ umc-rich-text-block {
     line-height: 1.75rem
 }
 
-
-/*!@:host*/
-
 .sc-umc-teaser-image-h {
     display: block
 }
@@ -1624,9 +1621,6 @@ umc-teaser-header {
     line-height: 2rem
 }
 
-
-/*!@:host*/
-
 .sc-umc-teaser-text-h {
     display: block
 }
@@ -1698,10 +1692,93 @@ umc-button {
     font-display: fallback;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
+umc-dev-statusbar {
+    position: fixed;
+}
+
+@media only screen and (min-width: 768px) {
+    umc-header-section.main-navigation {
+        --padding-horizontal: 0;
+    }
+}
+
+umc-sidebar.content-sidebar {
+    --padding-horizontal: 56px;
+    --padding-vertical: 56px;
+}
+
+umc-sidebar.content-sidebar umc-link-list {
+    color: #00778a;
+}
+
+umc-section.footer-links umc-column-section {
+    --text-color: white;
+    --text-size: 16px;
+    --padding-vertical: 44px;
+}
+
+@media only screen and (min-width: 768px) {
+    umc-section.footer-links umc-column-section {
+        --text-size: 16px;
+    }
+}
+
 umc-section.footer-links {
     --background-color: #003741;
 }
 
+umc-section.footer-colofon umc-column-section {
+    --text-color: white;
+    --text-size: 14px;
+    --padding-vertical: 44px;
+}
+
 umc-section.footer-colofon {
     --background-color: #00778a;
+}
+
+umc-column-section.debug {
+    box-sizing: border-box;
+    --background-color: #fafafa;
+    margin-bottom: 8px;
+}
+
+umc-column.submenu__main {
+    font-size: 22px;
+}
+
+umc-section.navigation-menu umc-column-section {
+    --text-color: white;
+}
+
+umc-section umc-hero-image {
+    background-color: #009cb4;
+}
+
+umc-column-section.debug umc-column {
+    --background-color: #009cb4;
+    --border-color: blue;
+    --text-color: white;
+}
+
+.logo {
+    width: 200px;
+    width: 260px;
+}
+
+.umc-column-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    umc-header-section .column--right {
+        order: -1;
+    }
 }
