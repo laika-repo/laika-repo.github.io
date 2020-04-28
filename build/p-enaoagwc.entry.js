@@ -1,0 +1,1 @@
+import{r,h as t,H as s}from"./p-7fac9afc.js";const c=class{constructor(t){r(this,t)}render(){return t(s,null,t("slot",null))}static get style(){return":host{display:block}"}};export{c as umc_grid_row};

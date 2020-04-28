@@ -1,0 +1,1 @@
+import{r as s}from"./p-7fac9afc.js";const t=class{constructor(t){s(this,t),this.active=!1}};export{t as umc_tab};
