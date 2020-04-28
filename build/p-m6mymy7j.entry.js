@@ -1,1 +1,0 @@
-import{r as e,h as r,H as t}from"./p-7fac9afc.js";const s=class{constructor(r){e(this,r)}render(){return r(t,null,r("pre",null,r("slot",null)))}static get style(){return"umc-code-example{font-size:1.125rem;line-height:1.625rem;color:#999}"}};export{s as umc_code_example};
