@@ -103,7 +103,6 @@ umc-column-section {
     flex-wrap: wrap;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(255, 0, 0, .3);
     width: 327px
 }
 
@@ -174,7 +173,6 @@ umc-content-header {
     flex-wrap: wrap;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(255, 0, 0, .3);
     width: 327px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -225,7 +223,6 @@ umc-hero-section {
     flex-wrap: wrap;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(255, 0, 0, .3);
     width: 327px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -280,7 +277,6 @@ umc-content-section {
     flex-wrap: wrap;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(255, 0, 0, .3);
     width: 327px
 }
 
@@ -345,7 +341,6 @@ umc-teaser-section {
     flex-wrap: wrap;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(255, 0, 0, .3);
     width: 327px
 }
 
@@ -394,7 +389,6 @@ umc-column {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, .5);
     width: 100%;
     color: #fff
 }
@@ -586,7 +580,6 @@ umc-hero-image {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, .5);
     width: 100%;
     margin-top: -24px
 }
@@ -786,7 +779,6 @@ umc-content-block {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, .5);
     width: 100%
 }
 
@@ -983,7 +975,6 @@ umc-sidebar {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, .5);
     width: 100%
 }
 
@@ -1201,7 +1192,6 @@ umc-teaser {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, .5);
     width: 100%;
     background-color: var(--background-color, var(--background-color--default));
     margin-bottom: 12px;
