@@ -1420,10 +1420,6 @@ umc-hero-image img {
     width: 100%
 }
 
-umc-hero-image {
-    border: 1px dotted rgba(255, 102, 0, .5)
-}
-
 @media (min-width:768px) {
     umc-hero-image {
         width: 60vw
