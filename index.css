@@ -175,8 +175,9 @@ umc-column-section.umc-breadcrumbs {
 umc-column-section.umc-location-switch {
     --text-color: #005261;
     --border-color: #ced9e5;
-    --margin-bottom: 0;
+    margin-bottom: 0;
     --padding-vertical: 8px;
+    padding-bottom: 0;
     -ms-flex-pack: justify;
     justify-content: space-between
 }
@@ -187,6 +188,12 @@ umc-column-section.umc-location-switch umc-column {
     width: 100%;
     -ms-flex-pack: center;
     justify-content: center
+}
+
+umc-column-section.umc-navigation-menu {
+    padding-top: 32px;
+    -ms-flex-direction: row;
+    flex-direction: row
 }
 
 @media (min-width:1440px) {
@@ -263,7 +270,6 @@ umc-content-header.justify-columns {
 }
 
 umc-content-header umc-title-block {
-    border: 1px dotted red;
     margin: 0 0 56px 56px
 }
 
@@ -346,7 +352,6 @@ umc-content-section.umc-content {
 }
 
 umc-content-section.umc-content-listing {
-    border: 1px dotted #00f;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
 }
@@ -807,6 +812,7 @@ umc-column.align--right {
     justify-content: flex-end
 }
 
+umc-column-section.umc-navigation-menu umc-column,
 umc-column.umc-breadcrumbs,
 umc-column.umc-footer-links-first,
 umc-column.umc-footer-links-second,
@@ -816,6 +822,7 @@ umc-column.umc-footer-socials {
     margin-right: 56px
 }
 
+umc-column-section.umc-navigation-menu umc-column:last-child,
 umc-column.umc-breadcrumbs:last-child,
 umc-column.umc-footer-links-first:last-child,
 umc-column.umc-footer-links-second:last-child,
@@ -848,6 +855,47 @@ umc-section-container.styleguide-main-navigation umc-column-section umc-column {
 
 umc-section-container.styleguide-main-navigation umc-column-section umc-list-header {
     margin-bottom: 8px
+}
+
+umc-column-section.umc-navigation-menu umc-column:first-child {
+    width: 12vw;
+    -ms-flex-order: 3;
+    order: 3
+}
+
+@media (min-width:768px) {
+    umc-column-section.umc-navigation-menu umc-column:first-child {
+        -ms-flex-order: initial;
+        order: 0
+    }
+}
+
+umc-column-section.umc-navigation-menu umc-column:nth-child(2) {
+    width: 44vw;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-order: 1;
+    order: 1
+}
+
+@media (min-width:768px) {
+    umc-column-section.umc-navigation-menu umc-column:nth-child(2) {
+        -ms-flex-order: initial;
+        order: 0
+    }
+}
+
+umc-column-section.umc-navigation-menu umc-column:last-child {
+    width: 12vw;
+    -ms-flex-order: 2;
+    order: 2
+}
+
+@media (min-width:768px) {
+    umc-column-section.umc-navigation-menu umc-column:last-child {
+        -ms-flex-order: initial;
+        order: 0
+    }
 }
 
 umc-column.umc-breadcrumbs {
@@ -1065,8 +1113,7 @@ umc-search-input input::placeholder {
 }
 
 umc-search-input button {
-    background: red;
-    border-width: 0
+    border-width: 0;
 }
 
 umc-section-container.umc-search-header umc-search-input {
@@ -1758,25 +1805,27 @@ umc-list umc-list-item a:hover {
     text-decoration: underline
 }
 
+umc-list umc-list-item.umc-list-item--active a {
+    color: #003741
+}
+
 @media (min-width:768px) {
     umc-list.umc-navigation-list--back umc-list-header,
-    umc-list.umc-navigation-list--back umc-list-item,
-    umc-list.umc-navigation-list umc-list-header,
-    umc-list.umc-navigation-list umc-list-item {
+    umc-list.umc-navigation-list--back umc-list-item {
         display: inline;
         margin-right: 24px
     }
 }
 
 umc-list.umc-navigation-list--back umc-list-header:last-child,
-umc-list.umc-navigation-list--back umc-list-item:last-child,
-umc-list.umc-navigation-list umc-list-header:last-child,
-umc-list.umc-navigation-list umc-list-item:last-child {
+umc-list.umc-navigation-list--back umc-list-item:last-child {
     margin-right: 0
 }
 
 umc-column.umc-footer-socials umc-list.umc-navigation-list umc-list-header,
 umc-column.umc-footer-socials umc-list.umc-navigation-list umc-list-item,
+umc-list.umc-navigation-list umc-list-header,
+umc-list.umc-navigation-list umc-list-item,
 umc-list.umc-share-list umc-list-header,
 umc-list.umc-share-list umc-list-item {
     display: inline;
@@ -1784,6 +1833,7 @@ umc-list.umc-share-list umc-list-item {
 }
 
 umc-column.umc-footer-socials umc-list.umc-navigation-list:last-child,
+umc-list.umc-navigation-list:last-child,
 umc-list.umc-share-list:last-child {
     margin-right: 0
 }
@@ -1935,6 +1985,16 @@ umc-menu-toggle umc-label {
     align-items: center
 }
 
+umc-menu-toggle umc-label span {
+    display: none
+}
+
+@media (min-width:768px) {
+    umc-menu-toggle umc-label span {
+        display: inline
+    }
+}
+
 umc-menu-toggle:hover {
     cursor: pointer
 }
@@ -1967,25 +2027,21 @@ umc-logo {
 
 umc-logo.umc-logo--fullcolor {
     background-repeat: no-repeat;
-    background-image: url(assets/logo-aumc.svg)
+    background-image: url(assets/logo-aumc.svg);
+    width: 200px;
+    height: 35px
+}
+
+@media (min-width:768px) {
+    umc-logo.umc-logo--fullcolor {
+        width: 288px;
+        height: 52px
+    }
 }
 
 umc-logo.umc-logo--white {
     background-repeat: no-repeat;
     background-image: url(assets/logo-aumc-white.svg)
-}
-
-umc-button {
-    border: 1px solid #00778a;
-    border-radius: 28px;
-    padding: 16px 24px;
-    font-family: Museo Sans Rounded, sans-serif;
-    font-weight: 500;
-    color: #00778a
-}
-
-umc-button:hover {
-    cursor: pointer
 }
 
 umc-publications-list {
@@ -2689,8 +2745,7 @@ umc-rich-text-block {
 
 umc-tag-list {
     display: block;
-    margin-bottom: 32px;
-    border: 1px dotted red
+    margin: 16px 0 32px 0
 }
 
 umc-teaser-header {
@@ -2774,6 +2829,33 @@ umc-list-header {
     display: block
 }
 
+umc-button {
+    border: 1px solid #00778a;
+    border-radius: 28px;
+    padding: 16px 24px;
+    font-family: Museo Sans Rounded, sans-serif;
+    font-weight: 500;
+    color: #00778a
+}
+
+umc-button:hover {
+    cursor: pointer
+}
+
+.umc-search-header umc-button {
+    border-width: 0
+}
+
+umc-button:before {
+    display: inline-block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(assets/icon-search-white.svg);
+    background-repeat: no-repeat;
+    margin-right: 8px
+}
+
 umc-publications-list-item-title {
     display: block;
     font-size: 1.5rem;
@@ -2801,12 +2883,19 @@ umc-publications-list-item-authors {
 }
 
 umc-tag {
-    padding: 8px 12px
+    padding: 8px 12px;
+    margin-right: 16px
 }
 
 umc-tag.umc-tag-completed {
     background-color: #f5fef0;
     color: #338405
+}
+
+umc-tag.umc-tag-institute {
+    border: 1px solid #ced9e5;
+    border-radius: 5px;
+    color: #717373
 }
 
 umc-heading {
