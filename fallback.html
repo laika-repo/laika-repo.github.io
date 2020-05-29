@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            /* background: #58c7ff; */
+            background: #333;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h5 {
+            margin: 0px;
+        }
+        
+        h1 {
+            font-family: sans-serif;
+            font-weight: 500;
+            font-size: 2.6rem;
+            margin-bottom: 32px;
+        }
+        
+        h2 {
+            font-weight: 300;
+            font-size: 2.2rem;
+        }
+        
+        h3 {
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-bottom: 32px;
+        }
+        
+        h4 {
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin: 0;
+            margin-bottom: 12px;
+        }
+        
+        h5 {
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .disclaimer {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #fafafa;
+        }
+        
+        form {
+            border-radius: 8px;
+            padding: 0px 16px;
+        }
+        
+        input,
+        select,
+        button {
+            box-sizing: border-box;
+            border-width: 0;
+            /* background-color: rgba(38, 169, 234, .5); */
+            background-color: #565656;
+            color: white;
+            font-size: 1.2rem;
+            padding: 16px;
+            /* border: 1px solid #999; */
+        }
+        
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            padding: 8px;
+            margin-bottom: 32px;
+            background-color: #555;
+            /* background-color: #3C99DC; */
+            /* background-color: #66D3FA; */
+            border-radius: 8px;
+            font-weight: 300;
+            height: 48px;
+        }
+        
+        fieldset {
+            border-width: 0;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        
+        button {
+            width: 100%;
+            font-weight: 500;
+            font-size: 1.6rem;
+            background-color: #3C99DC;
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 16px;
+        }
+        
+        button:hover {
+            cursor: pointer;
+        }
+        
+        input {
+            background-color: #555;
+            width: 100%;
+            /* background-color: #3C99DC; */
+            /* background-color: #66D3FA; */
+            font-size: 1.4rem;
+            border-radius: 8px;
+            font-weight: 300;
+        }
+        
+         ::placeholder {
+            color: #999;
+            font-size: 1.4rem;
+        }
+        
+        header {
+            margin-bottom: 32px;
+        }
+        
+        .select--small {
+            width: 64px;
+        }
+        
+        .header-shop {
+            font-size: 3.5rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        
+        li {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        
+        header {
+            background-color: white;
+            color: black;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        header ul {
+            margin: 0;
+        }
+        
+        header p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        /* header div.logo {
+            width: 45%;
+        }
+        
+        header div.description {
+            width: 55%;
+        } */
+        
+        header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            margin-bottom: 16px;
+            text-align: right;
+            line-height: 1.2em;
+            color: #222;
+        }
+        
+        header h3 strong {
+            color: black;
+        }
+        
+        header h4 {
+            font-size: 1rem;
+            text-align: right;
+            margin: 0;
+        }
+        
+        header h4 .seperator {
+            color: #666;
+        }
+        
+        section {
+            padding: 32px 16px;
+        }
+        
+        .status-dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 24px;
+            /* background-color: #444; */
+            border-radius: 8px;
+        }
+        
+        .dashboard-icon {
+            display: inline-flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .dashboard-icon__count {
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 1em;
+        }
+        
+        .dashboard-icon__text {
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+        
+        .button--round {
+            font-size: 2.4rem;
+            font-weight: 500;
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            line-height: 78px;
+            background-color: #666;
+            border-radius: 50%;
+        }
+        
+        .tagline h3 {
+            font-size: 1.6rem;
+            font-style: italic;
+            letter-spacing: 0.1em;
+            margin: 0;
+            padding: 0;
+        }
+        
+        section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+        
+        .button--round--selected {
+            background: #3C99DC;
+            border-width: 0;
+        }
+        
+        .button-list {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        
+        .dashboard-icon {
+            display: inline-flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .dashboard-icon__count {
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 1em;
+        }
+        
+        .dashboard-icon__text {
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+        
+        .dashboard-icon__count--big {
+            position: relative;
+            height: 64px;
+            width: 64px;
+            text-align: center;
+            font-size: 1.8rem;
+            line-height: 64px;
+            background-color: #666;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #666;
+            margin-bottom: 6px;
+        }
+        
+        .dashboard-icon__count {
+            position: relative;
+            height: 120px;
+            width: 120px;
+            text-align: center;
+            line-height: 120px;
+            background-color: #333;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #666;
+        }
+        
+        .dashboard-status {
+            display: inline-flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            align-items: center;
+        }
+        
+        .dashboard-status svg {
+            margin-bottom: 8px;
+        }
+        
+        .dashboard-status h4 {
+            font-size: 1rem;
+        }
+        
+        .status-value {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+        
+        .status-text {
+            text-align: center;
+        }
+        
+        .logo {
+            width: 400px;
+            margin-bottom: 0;
+        }
+        
+        .status__icon-value {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .status__icon-value svg {
+            margin-right: 8px;
+        }
+        
+        p.intro {
+            margin-bottom: 24px;
+            font-weight: 300;
+            color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header>
+        <h1>Opjebeurt.nl</h1>
+        <h2>nooit meer in de rij</h2>
+    </header -->
+
+    <header>
+        <div class='logo'>
+            <img src='assets/logo2.jpeg' class='logo'>
+        </div>
+
+
+    </header>
+
+
+
+
+    <section>
+
+
+        <form>
+            <h3>Nooit meer in de rij</h3>
+            <p class='intro'>Welkom bij Op je beurt, dit is een korte introductie tekst met een kleine uitleg.</p>
+            <h4>Waar wil je heen?</h4>
+            <select>
+            <option disabled selected>Kies een plaats&nbsp;&nbsp;</option>
+            <option>Amsterdam</option>
+            <option>Zaandam</option>
+        </select>
+            <select>
+            <option disabled selected>Kies een winkel of locatie&nbsp;&nbsp;</option>
+            <option>Hema Kalverstraat</option>
+            <option>Hema Kinkerstraat</option>
+        </select>
+
+            <fieldset>
+                <h4>Vul je 06 nummer in en je krijgt een sms zodra je aan de beurt bent.</h4>
+                <input placeholder='06-12345678'>
+            </fieldset>
+
+            <h4>Met hoeveel mensen wil je komen?</h4>
+            <div class='button-list'>
+                <div class='button--round button--round button--round--selected'>1</div>
+                <div class='button--round '>2</div>
+                <div class='button--round '>3</div>
+                <div class='button--round '>4</div>
+            </div>
+
+
+            <button>Meld je aan</button>
+
+            <p class='disclaimer'>We sturen je twee smsjes en verwijderen daarna je nummer. We slaan geen gegevens van je op.</p>
+        </form>
+
+
+    </section>
+</body>
+
+</html>
+
+
+<!-- Scherm 1: homepage welkom bij Opjebeurt.nl - : Scherm 2: aanmelden voor de rij Meldt u aan met uw mobiele nummer Gemiddelde wachttijd wordt aangegeven Optie: met hoeveel mensen kom je? Scherm 3: bevestiging U staat in de rij! De gemiddelde wachttijd bedraagt
+XX minuten. U ontvangt een SMS-bericht zodra u aan de beurt bent. U heeft na ontvangst van het bericht XX minuten om binnen te komen. U ontvangt een bevestigings-SMS bericht dat u in de rij staat. -->
