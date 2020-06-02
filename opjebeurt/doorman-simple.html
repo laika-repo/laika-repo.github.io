@@ -3,6 +3,12 @@
 
 <head>
     <link rel="stylesheet" href="index.css">
+
+    <style>
+        .total-count {
+            font-size: .6em;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,9 +37,9 @@
         <div class='status-dashboard status-dashboard--centered'>
             <div class='dashboard-icon'>
                 <span class='dashboard-icon__count--big'>
-                    <span class='icon__count__background'></span> 5/25
+                    <span class='icon__count__background'></span> <span class='visitors-count'>23</span>/<span class='total-count'>25</span>
                 </span>
-                <span class='dashboard-icon__text'><strong>5</strong> van <strong>25</strong> personen zijn binnen</span>
+                <span class='dashboard-icon__text'>Personen zijn binnen</span>
             </div>
         </div>
 
@@ -45,6 +51,8 @@
         </div>
 
         <h3 class='status-header'>Er staan <strong>24</strong> mensen in de wachtrij</h3>
+        <h3 class='status-header'>Er zijn
+            <Strong>12</Strong> mensen uitgenodigd</h3>
 
         <form><button>Pauzeer wachtrij</button></form>
     </section>
